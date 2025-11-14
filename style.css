@@ -1,0 +1,254 @@
+/* ==========================
+   FONT & RESET
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff7fa; /* lembut */
+    color: #3d2b35; /* rose brown */
+    line-height: 1.6;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+.navbar {
+    width: 100%;
+    padding: 18px 40px;
+    background: #ffdde8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #b2225a;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #3d2b35;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b2225a;
+}
+
+/* ==========================
+   HEADER
+========================== */
+.header {
+    text-align: center;
+    padding: 100px 20px 70px;
+    background: linear-gradient(135deg, #ffe5ee, #ffd3e0);
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #b2225a;
+    margin-bottom: 12px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #4b3b43;
+}
+
+.romantic-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #6a533b; /* cokelat tanah */
+    background: #fffaf3; /* krem lembut */
+    border-left: 4px solid #c8d1c0; /* hijau sage */
+    padding: 15px 20px;
+    margin: 25px auto;
+    width: fit-content;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.audio-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.romantic-audio {
+    background: #fff8ef; /* krem lembut */
+    border: 2px solid #c9d6c3; /* hijau sage */
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Warna kontrol audio (Chrome/Edge/Safari) */
+.romantic-audio::-webkit-media-controls-panel {
+    background-color: #f7efe2; /* krem keemasan */
+    border-radius: 12px;
+}
+
+.romantic-audio::-webkit-media-controls-play-button,
+.romantic-audio::-webkit-media-controls-timeline,
+.romantic-audio::-webkit-media-controls-volume-slider {
+    filter: hue-rotate(10deg) saturate(0.8);
+}
+
+/* Hover efek lembut */
+.romantic-audio:hover {
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+
+/* ==========================
+   SECTION TITLE
+========================== */
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #b2225a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ==========================
+   GALERI (Slideshow)
+========================== */
+.galeri-section {
+    padding: 60px 20px;
+}
+
+/* Container harus cukup besar untuk muat 7 foto */
+.slideshow-container {
+    width: 100%;
+    max-width: 1200px; /* dari 533px → HARUS diperbesar */
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.slides-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Foto 4:3 & 7 foto pas 1 layar */
+.slide-image {
+    width: calc(100% / 7);   /* 7 foto sekaligus */
+    aspect-ratio: 4 / 3;     /* rasio 4:3 */
+    object-fit: cover;
+    flex-shrink: 0;          /* cegah mengecil sendiri */
+    border-radius: 0px;
+}
+
+/* Overlay pink tipis di atas semua foto slide */
+.slideshow-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 200, 180, 0.18); /* soft pink pastel */
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Supaya slides tetap berada di bawah overlay */
+.slides-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* NAV BUTTONS */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 12px;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(178, 34, 90, 0.6);
+    border: none;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(178, 34, 90, 0.9);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+/* ==========================
+   ROMANTIS SECTION
+========================== */
+.romantis-section {
+    padding: 60px 20px;
+    background: #ffeef4;
+    text-align: center;
+}
+
+.romantis-section p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    color: #4b3b43;
+}
+
+/* ==========================
+   TENTANG SECTION
+========================== */
+.tentang-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.tentang-section p {
+    max-width: 700px;
+    margin: auto;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+.footer {
+    background: #ffdde8;
+    padding: 25px;
+    text-align: center;
+    color: #7a4c5a;
+    font-size: 14px;
+}
